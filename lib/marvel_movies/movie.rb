@@ -8,11 +8,27 @@ class MarvelMovies::Movie
   end
 
   def self.upcoming
-    self.all
+    today = Date.today
+    counter = 0
+    self.scrape_movies.map do |movie|
+      movie_date = Date.parse(movie.release_date)
+      if today < movie_date
+        counter += 1
+        puts "#{counter}. #{movie.title} - #{movie.release_date}"
+      end
+    end
   end
 
   def self.dvd
-    #Returns all Marvel movies already on DVD
+    today = Date.today
+    counter = 0
+    self.scrape_movies.map do |movie|
+      movie_date = Date.parse(movie.release_date)
+      if today >= movie_date
+        counter += 1
+        puts "#{counter}. #{movie.title} - #{movie.release_date}"
+      end
+    end
   end
 
   def self.scrape_movies
@@ -28,5 +44,9 @@ class MarvelMovies::Movie
     end
     movie_array.uniq
   end
+
+  # def movie_date(date_string)
+  #   Date.parse(date_string)
+  # end
 
 end

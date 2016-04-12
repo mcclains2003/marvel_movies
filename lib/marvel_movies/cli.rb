@@ -3,7 +3,6 @@ class MarvelMovies::CLI
   def call
     list_choices
     menu
-    goodbye
   end
 
   def list_choices
@@ -24,9 +23,11 @@ class MarvelMovies::CLI
       when "1"
         MarvelMovies::Movie.all
       when "2"
-        puts "All Upcoming Movies List"
+        MarvelMovies::Movie.upcoming
       when "3"
-        puts "All Movies already on DVD List"
+        MarvelMovies::Movie.dvd
+      when "exit"
+        goodbye
       else
         puts "Not familiar with that option, please type another option or exit"
       end
@@ -35,6 +36,10 @@ class MarvelMovies::CLI
 
   def goodbye
     puts "Goodbye and check back later for more Marvel Universe"
+  end
+
+  def movie_description_menu
+    puts "Choose the number of the movie you would like more information on, type back to go back to previous menu, or exit"
   end
 
 end
