@@ -3,7 +3,7 @@ class MarvelMovies::Movie
 
   def self.all
     self.scrape_movies.map.with_index(1) do |movie, i|
-      puts "#{i}. #{movie.title}"
+      puts "#{i}. #{movie.title} - #{movie.release_date}"
     end
   end
 
@@ -23,6 +23,7 @@ class MarvelMovies::Movie
       movie = self.new
       movie.title = movies.css("div.row-item-text h5 a").text
       movie.url = movies.css("div.row-item-text h5 a").attr("href").value
+      movie.release_date = movies.css("div.row-item-text p.media-item-meta").text
       movie_array << movie
     end
     movie_array.uniq
