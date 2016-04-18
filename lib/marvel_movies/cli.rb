@@ -18,12 +18,12 @@ class MarvelMovies::CLI
     input = nil
     puts "Please enter the option you would like to see or type exit: "
     while input != "exit"
-      # puts "Please enter the option you would like to see or type exit: "
       input = gets.strip.downcase
+
       case input
       when "1"
         puts ""
-        MarvelMovies::Movie.list_all
+        MarvelMovies::Movie.list_all.sort
         movie_description_menu(MarvelMovies::Movie.all)
       when "2"
         puts ""
@@ -50,10 +50,12 @@ class MarvelMovies::CLI
 
   def movie_description_menu(array)
     input = nil
+
     while input != "exit"
       puts " "
       puts "Choose the number of the movie you would like more information on, type back to go back to previous menu, or exit: "
       input = gets.strip.downcase
+
       if input.to_i > 0
         movie = MarvelMovies::Movie.find_movie(array, input.to_i)
         movie.profile_scrape
@@ -68,10 +70,6 @@ class MarvelMovies::CLI
         goodbye
       end
     end
-  end
-
-  def back
-    call
   end
 
 end

@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A Gem that returns all new, current and past Marvel Movies."
   spec.description   = "This Gem scrapes movies from the Marvel website and then displays them. You can choose a movie from the list it displays to see more information about it."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/mcclains2003/marvel_movies.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  # spec.add_development_dependency "pry"
 
   spec.add_dependency "nokogiri"
 end
