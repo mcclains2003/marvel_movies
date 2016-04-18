@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Shaun McClain"]
   spec.email         = ["mcclains2003@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "A Gem that returns all new, current and past Marvel Movies."
+  spec.description   = "This Gem scrapes movies from the Marvel website and then displays them. You can choose a movie from the list it displays to see more information about it."
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry"
 
   spec.add_dependency "nokogiri"
 end
