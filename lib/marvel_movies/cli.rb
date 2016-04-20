@@ -23,7 +23,7 @@ class MarvelMovies::CLI
       case input
       when "1"
         puts ""
-        MarvelMovies::Movie.list_all.sort
+        MarvelMovies::Movie.list_all
         movie_description_menu(MarvelMovies::Movie.all)
       when "2"
         puts ""
